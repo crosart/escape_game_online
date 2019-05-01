@@ -41,7 +41,7 @@ public class CombinaisonRecherche extends Combinaison {
         String combiInput;
         int[] userCombi = new int[size];
 
-        System.out.println("Veuillez saisir votre combinaison secrète à " + size + " chiffres !");
+        System.out.println("\r\n\r\nVeuillez saisir votre combinaison secrète à " + size + " chiffres !");
 
         try {
 

@@ -27,7 +27,6 @@ public class Recherche extends Game {
 
 
             String userResponse = defenderRecherche.inputUserResponse();
-            System.out.println("\r\n\r\n||||| TOUR " + (turn + 2) + " |||||\r\n\r\n");
 
             for (int i = 0; i < size; i++) {
 
@@ -47,7 +46,13 @@ public class Recherche extends Game {
 
             }
 
-            System.out.println("Je pense que la solution est " + Arrays.toString(newPropoPc) + " !");
+            if (turn < (turnMax-1)) {
+
+                System.out.println("\r\n\r\n||||| TOUR " + (turn + 2) + " |||||\r\n\r\n");
+
+            }
+
+
 
             if (!responseFound) {
 
@@ -56,9 +61,15 @@ public class Recherche extends Game {
 
             }
 
+            if (turn != turnMax) {
+
+                System.out.println("Je pense que la solution est " + Arrays.toString(newPropoPc) + " !");
+
+            }
+
             if (turn == turnMax) {
 
-                System.out.println("Désolé je n'ai pas trouvé la solution !");
+                System.out.println("\r\n\r\nDésolé je n'ai pas trouvé la solution !");
 
             }
 

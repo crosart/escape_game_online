@@ -48,11 +48,13 @@ public class Main {
 
                 }
 
-                System.out.println("Voulez-vous : 1 - Rejouer au même mode | 2 - Rejouer autre mode | 3 - Quitter");
+                System.out.println("\r\n\r\nVoulez-vous : 1 - Rejouer au même mode | 2 - Rejouer autre mode | 3 - Quitter");
                 sc = new Scanner(System.in);
                 replayChoice = sc.nextInt();
 
             }
+
+            System.out.println("\r\n\r\nMerci d'avoir joué !");
 
         }
 
