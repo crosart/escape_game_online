@@ -48,7 +48,14 @@ public class Main {
 
                 }
 
-                System.out.println("\r\n\r\nVoulez-vous : 1 - Rejouer au même mode | 2 - Rejouer autre mode | 3 - Quitter");
+                System.out.println("\r\n\r\n------------------------------------------------------");
+                System.out.println("                     Voulez-vous :                    ");
+                System.out.println("\r\n               1 - REJOUER AU MÊME MODE               ");
+                System.out.println("           2 - REJOUER MAIS À UN AUTRE MODE           ");
+                System.out.println("                      3 - QUITTER                     ");
+                System.out.println("------------------------------------------------------");
+
+
                 sc = new Scanner(System.in);
                 replayChoice = sc.nextInt();
 
@@ -82,6 +89,15 @@ public class Main {
 
     }
 
+    private void printMenuMode() {
+
+        System.out.println("\r\n\r\n------------------------------------------------------");
+        System.out.println("            Choisissez votre mode de jeu !            ");
+        System.out.println("\r\n      1 - DEFENDER || 2 - CHALLENGER || 3 - DUEL      ");
+        System.out.println("------------------------------------------------------");
+
+    }
+
 /*
     public void printMenuGame() {
 
@@ -93,25 +109,13 @@ public class Main {
         System.out.println("              \\////////////////////////////////////////////////");
 
     }
-*/
 
-    private void printMenuMode() {
-
-        System.out.println("------------------------------------------------------");
-        System.out.println("            Choisissez votre mode de jeu !            ");
-        System.out.println("      1 - DEFENDER || 2 - CHALLENGER || 3 - DUEL      ");
-        System.out.println("------------------------------------------------------");
-
-    }
-
-/*
    private Game selectGameType() {
 
         return new Recherche();
 
     }
 */
-
 
     private Game selectGameMode() {
 
