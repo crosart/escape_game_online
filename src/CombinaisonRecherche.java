@@ -2,15 +2,17 @@ import java.util.Scanner;
 
 public class CombinaisonRecherche extends Combinaison {
 
-    private int size = 4;
+    private int size = getSize();
     private int newPropoPc = 0;
 
-    public int[] codePcInit() {
+    int[] codePcInit() {
 
         int[] propoPcInit = new int[size];
 
         for (int i = 0; i < size; i++) {
+
             propoPcInit[i] = 5;
+
         }
 
         return propoPcInit;
@@ -23,7 +25,9 @@ public class CombinaisonRecherche extends Combinaison {
         int[] codePcGen = new int[size];
 
         for (int i = 0; i < size; i++){
+
             codePcGen[i] = (int)(Math.random() * 10);
+
         }
 
         return codePcGen;
@@ -44,7 +48,9 @@ public class CombinaisonRecherche extends Combinaison {
             combiInput = sc.nextLine();
 
             if (combiInput.length() != size) {
+
                 throw new Exception();
+
             }
 
             else {
@@ -85,7 +91,9 @@ public class CombinaisonRecherche extends Combinaison {
         try {
 
             if ((!inputUser.contains(equal) && !inputUser.contains(minus) && !inputUser.contains(plus)) || inputUser.length() != size){
+
                 throw new Exception();
+
             }
 
             else return inputUser;
@@ -103,6 +111,7 @@ public class CombinaisonRecherche extends Combinaison {
 
     @Override
     public int[] inputTentativeUser() {
+
         sc = new Scanner(System.in);
         int[] codeUser = new int[size];
         String stringCodeUser;
@@ -112,7 +121,9 @@ public class CombinaisonRecherche extends Combinaison {
             stringCodeUser = sc.nextLine();
 
             if (stringCodeUser.length() != size) {
+
                 throw new Exception();
+
             }
 
             else {
@@ -144,15 +155,21 @@ public class CombinaisonRecherche extends Combinaison {
         String pcResponse = "";
 
         if (compareCodeUser == compareCodePc) {
+
             pcResponse = "=";
+
         }
 
         if (compareCodeUser > compareCodePc) {
+
             pcResponse = "-";
+
         }
 
         if (compareCodeUser < compareCodePc) {
+
             pcResponse = "+";
+
         }
 
         return pcResponse;
@@ -163,17 +180,23 @@ public class CombinaisonRecherche extends Combinaison {
     public int tentativePc(char compareUserResponse, int prevPropoPc) {
 
         if (compareUserResponse == '=') {
+
             newPropoPc = prevPropoPc;
+
         }
 
         else if (compareUserResponse == '-') {
 
             if (prevPropoPc <= 5) {
+
                 newPropoPc = prevPropoPc / 2;
+
             }
 
             else {
+
                 newPropoPc = prevPropoPc - ((prevPropoPc - 5) / 2);
+
             }
 
         }
@@ -181,11 +204,15 @@ public class CombinaisonRecherche extends Combinaison {
         else if (compareUserResponse == '+') {
 
             if (prevPropoPc >= 5) {
+
                 newPropoPc = prevPropoPc + ((10 - prevPropoPc) / 2);
+
             }
 
             else {
+
                 newPropoPc = prevPropoPc + ((5 - prevPropoPc) / 2);
+
             }
 
         }

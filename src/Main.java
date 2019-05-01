@@ -1,11 +1,12 @@
 import java.util.Scanner;
-import java.util.logging.Logger;
+//  import java.util.logging.Logger;
 
 public class Main {
 
-//    private int gameType = 0;
-    private static Logger logger = Logger.getLogger(Main.class.getName());
-    int gameMode = 0;
+//  private int gameType = 0;
+//  private static Logger logger = Logger.getLogger(Main.class.getName());
+
+    private int gameMode = 0;
     private Game gameChoice;
     private Scanner sc;
 
@@ -17,9 +18,7 @@ public class Main {
 
     }
 
-
-    public void init() {
-
+    private void init() {
 
         try {
 
@@ -41,72 +40,70 @@ public class Main {
 
                 } else if (replayChoice == 3) {
 
-                    logger.info("Merci d'avoir joué !");
+                    System.out.println("Merci d'avoir joué !");
 
                 } else {
-                    // throw new Exception();
-                    logger.info("Une erreur est survenue ! Veuillez Choisir 1, 2 OU 3");
-                    //                   sc = new Scanner(System.in);
-                    //                   replayChoice = sc.nextInt();
+
+                    System.out.println("Une erreur est survenue ! Veuillez Choisir 1, 2 OU 3");
+
                 }
 
-                logger.info("Voulez-vous : 1 - Rejouer au même mode | 2 - Rejouer autre mode | 3 - Quitter");
+                System.out.println("Voulez-vous : 1 - Rejouer au même mode | 2 - Rejouer autre mode | 3 - Quitter");
                 sc = new Scanner(System.in);
                 replayChoice = sc.nextInt();
 
             }
 
-
         }
-
 
         catch (Exception e) {
 
-            logger.info("Une erreur est survenue !");
-            this.init();
+            System.out.println("Une erreur est survenue !");
 
         }
 
     }
 
 
-    public static void printIntro() {
+    private static void printIntro() {
 
-        logger.info(",---.                             ,---.               ");
-        logger.info("|--- ,---.,---.,---.,---.,---.    |  _.,---.,-.-.,---.");
-        logger.info("|    `---.|    ,---||   ||---'    |   |,---|| | ||---'");
-        logger.info("`---'`---'`---'`---^|---'`---'    `---'`---^` ' '`---'");
-        logger.info("                    |  ");
-        logger.info("------------------------------------------------------");
-        logger.info("            ,---.,   .|    |,   .,---.");
-        logger.info("            |   ||\\  ||    ||\\  ||--- ");
-        logger.info("            |   || \\ ||    || \\ ||    ");
-        logger.info("            `---'`  `'`--- ``  `'`---'");
-
-    }
-
-/*    public void printMenuGame() {
-
-        logger.info("            _______________________________________________");
-        logger.info("           /\\                                              \\");
-        logger.info("           \\ \\       À quel jeu souhaitez vous jouer ?      \\");
-        logger.info("            \\ \\     1 - RECHERCHE +/- || 2 - MASTERMIND      \\");
-        logger.info("             \\ \\______________________________________________\\");
-        logger.info("              \\////////////////////////////////////////////////");
-
-    }*/
-
-    public void printMenuMode() {
-
-        logger.info("------------------------------------------------------");
-        logger.info("            Choisissez votre mode de jeu !            ");
-        logger.info("      1 - DEFENDER || 2 - CHALLENGER || 3 - DUEL      ");
-        logger.info("------------------------------------------------------");
+        System.out.println(",---.                             ,---.               ");
+        System.out.println("|--- ,---.,---.,---.,---.,---.    |  _.,---.,-.-.,---.");
+        System.out.println("|    `---.|    ,---||   ||---'    |   |,---|| | ||---'");
+        System.out.println("`---'`---'`---'`---^|---'`---'    `---'`---^` ' '`---'");
+        System.out.println("                    |  ");
+        System.out.println("------------------------------------------------------");
+        System.out.println("            ,---.,   .|    |,   .,---.");
+        System.out.println("            |   ||\\  ||    ||\\  ||--- ");
+        System.out.println("            |   || \\ ||    || \\ ||    ");
+        System.out.println("            `---'`  `'`--- ``  `'`---'");
 
     }
 
-/*    private Game selectGameType() {
+/*
+    public void printMenuGame() {
 
+        System.out.println("            _______________________________________________");
+        System.out.println("           /\\                                              \\");
+        System.out.println("           \\ \\       À quel jeu souhaitez vous jouer ?      \\");
+        System.out.println("            \\ \\     1 - RECHERCHE +/- || 2 - MASTERMIND      \\");
+        System.out.println("             \\ \\______________________________________________\\");
+        System.out.println("              \\////////////////////////////////////////////////");
+
+    }
+*/
+
+    private void printMenuMode() {
+
+        System.out.println("------------------------------------------------------");
+        System.out.println("            Choisissez votre mode de jeu !            ");
+        System.out.println("      1 - DEFENDER || 2 - CHALLENGER || 3 - DUEL      ");
+        System.out.println("------------------------------------------------------");
+
+    }
+
+/*
+   private Game selectGameType() {
 
         return new Recherche();
 
@@ -121,30 +118,40 @@ public class Main {
         try {
 
             printMenuMode();
-
             gameMode = sc.nextInt();
 
             if (gameMode == 1) {
+
                 return gameChoice.defenderMode();
+
             }
+
             else if (gameMode == 2) {
+
                 return gameChoice.challengerMode();
+
             }
+
             else if (gameMode == 3) {
+
                 return gameChoice.duelMode();
+
             }
+
             else {
+
                 sc = null;
                 throw new Exception();
+
             }
 
         } catch (Exception e) {
-            logger.info("Merci de sélectionner votre mode de jeu avec 1, 2, ou 3");
+
+            System.out.println("Merci de sélectionner votre mode de jeu avec 1, 2, ou 3");
             return selectGameMode();
+
         }
 
     }
-
-
 
 }

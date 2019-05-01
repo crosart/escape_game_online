@@ -2,16 +2,21 @@ import java.util.Arrays;
 
 public class Recherche extends Game {
 
+    private GetProperties properties = new GetProperties();
     private boolean responseFound = false;
-    private int size = 4;
+    private int size = Integer.parseInt(properties.getSize());
+    private int turnMax = Integer.parseInt(properties.getTries());
+    private int devmode = Integer.parseInt(properties.getDevmode());
     private int turn = 0;
-    private int turnMax = 5;
 
     @Override
     public Game defenderMode() {
 
+
         CombinaisonRecherche defenderRecherche = new CombinaisonRecherche();
         defenderRecherche.inputUserCode();
+
+        System.out.println("\r\n\r\n||||| TOUR 1 |||||\r\n\r\n");
 
         int[] prevPropoPc = defenderRecherche.codePcInit();
         int[] newPropoPc = new int[size];
@@ -20,7 +25,9 @@ public class Recherche extends Game {
 
         while (turn != turnMax && !responseFound) {
 
+
             String userResponse = defenderRecherche.inputUserResponse();
+            System.out.println("\r\n\r\n||||| TOUR " + (turn + 2) + " |||||\r\n\r\n");
 
             for (int i = 0; i < size; i++) {
 

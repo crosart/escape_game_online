@@ -9,15 +9,16 @@ public abstract class Combinaison {
     public abstract int[] codePcGenerator();
     public abstract int[] inputTentativeUser();
 
+    private GetProperties properties = new GetProperties();
 
-    private int size = 4;
+    private int size = Integer.parseInt(properties.getSize());
     private int[] combiGen = new int[size];
     int[] userCombi = new int[size];
     Scanner sc;
     public CombinaisonRecherche propoPc;
 
 
-    public int getSize() {
+    int getSize() {
         return size;
     }
 
