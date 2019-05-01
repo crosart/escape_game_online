@@ -164,9 +164,6 @@ public class Recherche extends Game {
             pcResponse = "";
             tentativeUser = duelRecherche.inputTentativeUser();
 
-
-
-
             for (int i = 0; i < size; i++) {
 
                 pcResponse = pcResponse + duelRecherche.tentativeUser(tentativeUser[i], codePc[i]);
@@ -182,7 +179,6 @@ public class Recherche extends Game {
             }
 
             System.out.println("Voici ma réponse : " + pcResponse + "\r\n\r\nÀ mon tour de tenter !");
-
             System.out.println("\r\nJe pense que la solution est " + Arrays.toString(newPropoPc) + " !");
             String userResponse = duelRecherche.inputUserResponse();
 
@@ -209,6 +205,7 @@ public class Recherche extends Game {
         }
 
         return null;
+
     }
 
 }
