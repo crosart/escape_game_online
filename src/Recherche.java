@@ -92,6 +92,13 @@ public class Recherche extends Game {
         System.out.println("\r\n");
         System.out.println("Ma combinaison secrète à " + size + " chiffres a été générée !");
 
+
+        if (devmode == 1) {
+
+            System.out.println("\r\nMode développeur : Ma combinaison est " + Arrays.toString(codePc));
+
+        }
+
         while (turn != turnMax && !responseFound) {
 
             System.out.println("\r\n\r\n||||| TOUR " + (turn + 1) + " |||||\r\n\r\n");
@@ -129,6 +136,7 @@ public class Recherche extends Game {
             if (turn == turnMax) {
 
                 System.out.println("\r\n\r\nDommage ! Vous n'avez pas trouvé la solution dans le nombre de tours imparti !");
+                System.out.println("Mon code était : " + Arrays.toString(codePc));
 
             }
 
@@ -150,6 +158,13 @@ public class Recherche extends Game {
 
         System.out.println("\r\n");
         System.out.println("Ma combinaison secrète à " + size + " chiffres a été générée, à vous de saisir la vôtre !");
+
+        if (devmode == 1) {
+
+            System.out.println("\r\nMode développeur : Ma combinaison est " + Arrays.toString(codePc) + "\r\n");
+
+        }
+
         duelRecherche.inputUserCode();
 
 
@@ -159,7 +174,7 @@ public class Recherche extends Game {
             System.out.println("Quelle est votre proposition ?");
 
             if (turn != 0) {
-                System.out.println("Rappel du tour précédent : Votre tentative : " + Arrays.toString(tentativeUser) + " || Ma réponse : " + pcResponse);
+                System.out.println("Rappel >>> Votre tentative précédente : " + Arrays.toString(tentativeUser) + " || Ma réponse : " + pcResponse);
             }
             pcResponse = "";
             tentativeUser = duelRecherche.inputTentativeUser();
@@ -178,7 +193,7 @@ public class Recherche extends Game {
 
             }
 
-            System.out.println("Voici ma réponse : " + pcResponse + "\r\n\r\nÀ mon tour de tenter !");
+            System.out.println("\r\nVoici ma réponse : " + pcResponse + "\r\n\r\nÀ mon tour de tenter !");
             System.out.println("\r\nJe pense que la solution est " + Arrays.toString(newPropoPc) + " !");
             String userResponse = duelRecherche.inputUserResponse();
 
