@@ -1,8 +1,12 @@
+package game;
+
 import java.io.InputStream;
 import java.util.Properties;
+import org.apache.log4j.Logger;
 
 class GetProperties {
 
+    private static Logger logger = Logger.getLogger(Main.class.getName());
     private String size;
     private String tries;
     private String devmode;
@@ -25,7 +29,7 @@ class GetProperties {
 
         }
         catch (Exception e) {
-            System.out.println("Exception catch");
+            logger.info("Exception catch");
         }
 
 

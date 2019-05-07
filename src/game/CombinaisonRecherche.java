@@ -1,7 +1,11 @@
+package game;
+
 import java.util.Scanner;
+import org.apache.log4j.Logger;
 
 public class CombinaisonRecherche extends Combinaison {
 
+    private static Logger logger = Logger.getLogger(Main.class.getName());
     private int size = getSize();
     private int newPropoPc = 0;
 
@@ -41,7 +45,7 @@ public class CombinaisonRecherche extends Combinaison {
         String combiInput;
         int[] userCombi = new int[size];
 
-        System.out.println("Veuillez saisir votre combinaison secrète à " + size + " chiffres !");
+        logger.info("Veuillez saisir votre combinaison secrète à " + size + " chiffres !");
 
         try {
 
@@ -69,7 +73,7 @@ public class CombinaisonRecherche extends Combinaison {
 
         catch (Exception e) {
 
-            System.out.println("Une erreur est survenue ! Rappel, votre combinaison secrète doit comporter " + size + " chiffres uniquement.");
+            logger.info("Une erreur est survenue ! Rappel, votre combinaison secrète doit comporter " + size + " chiffres uniquement.");
             return inputUserCode();
 
         }
@@ -85,7 +89,7 @@ public class CombinaisonRecherche extends Combinaison {
         CharSequence plus = "+";
         String inputUser;
 
-        System.out.println("Quelle est votre Réponse ? ( - | + | = )");
+        logger.info("Quelle est votre Réponse ? ( - | + | = )");
         inputUser = sc.nextLine();
 
         try {
@@ -102,7 +106,7 @@ public class CombinaisonRecherche extends Combinaison {
 
         catch (Exception e){
 
-            System.out.println("Une erreur est survenue ! Rappel, votre réponse secrète doit comporter " + size + " caractères uniquement. ( - | + | = )");
+            logger.info("Une erreur est survenue ! Rappel, votre réponse secrète doit comporter " + size + " caractères uniquement. ( - | + | = )");
             return inputUserResponse();
 
         }
@@ -142,7 +146,7 @@ public class CombinaisonRecherche extends Combinaison {
 
         catch (Exception e) {
 
-            System.out.println("Une erreur est survenue ! Rappel, votre combinaison secrète doit comporter " + size + " chiffres uniquement.");
+            logger.info("Une erreur est survenue ! Rappel, votre combinaison secrète doit comporter " + size + " chiffres uniquement.");
             return inputTentativeUser();
 
         }

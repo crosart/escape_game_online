@@ -1,7 +1,11 @@
+package game;
+
 import java.util.Arrays;
+import org.apache.log4j.Logger;
 
 public class Recherche extends Game {
 
+    private static Logger logger = Logger.getLogger(Main.class.getName());
     private GetProperties properties = new GetProperties();
     private boolean responseFound = false;
     private int size = Integer.parseInt(properties.getSize());
@@ -15,15 +19,15 @@ public class Recherche extends Game {
 
         CombinaisonRecherche defenderRecherche = new CombinaisonRecherche();
 
-        System.out.println("\r\n");
+        logger.info("\r\n");
         defenderRecherche.inputUserCode();
 
-        System.out.println("\r\n\r\n||||| TOUR 1 |||||\r\n\r\n");
+        logger.info("\r\n\r\n||||| TOUR 1 |||||\r\n\r\n");
 
         int[] prevPropoPc = defenderRecherche.codePcInit();
         int[] newPropoPc = new int[size];
 
-        System.out.println("Je pense que la solution est " + Arrays.toString(defenderRecherche.codePcInit()) + " !");
+        logger.info("Je pense que la solution est " + Arrays.toString(defenderRecherche.codePcInit()) + " !");
 
         while (turn != turnMax && !responseFound) {
 
@@ -43,14 +47,14 @@ public class Recherche extends Game {
             if (userResponse.matches("\\={" + Integer.valueOf(size).toString() + "}")) {
 
                 responseFound = true;
-                System.out.println("\r\n\r\nJ'ai la solution ! C'est bien votre combinaison !");
+                logger.info("\r\n\r\nJ'ai la solution ! C'est bien votre combinaison !");
                 break;
 
             }
 
             if (turn < (turnMax-1)) {
 
-                System.out.println("\r\n\r\n||||| TOUR " + (turn + 2) + " |||||\r\n\r\n");
+                logger.info("\r\n\r\n||||| TOUR " + (turn + 2) + " |||||\r\n\r\n");
 
             }
 
@@ -65,13 +69,13 @@ public class Recherche extends Game {
 
             if (turn != turnMax) {
 
-                System.out.println("Je pense que la solution est " + Arrays.toString(newPropoPc) + " !");
+                logger.info("Je pense que la solution est " + Arrays.toString(newPropoPc) + " !");
 
             }
 
             if (turn == turnMax) {
 
-                System.out.println("\r\n\r\nDésolé je n'ai pas trouvé la solution !");
+                logger.info("\r\n\r\nDésolé je n'ai pas trouvé la solution !");
 
             }
 
@@ -89,20 +93,20 @@ public class Recherche extends Game {
         String pcResponse = new String();
 
 
-        System.out.println("\r\n");
-        System.out.println("Ma combinaison secrète à " + size + " chiffres a été générée !");
+        logger.info("\r\n");
+        logger.info("Ma combinaison secrète à " + size + " chiffres a été générée !");
 
 
         if (devmode == 1) {
 
-            System.out.println("\r\nMode développeur : Ma combinaison est " + Arrays.toString(codePc));
+            logger.info("\r\nMode développeur : Ma combinaison est " + Arrays.toString(codePc));
 
         }
 
         while (turn != turnMax && !responseFound) {
 
-            System.out.println("\r\n\r\n||||| TOUR " + (turn + 1) + " |||||\r\n\r\n");
-            System.out.println("Quelle est votre proposition ?");
+            logger.info("\r\n\r\n||||| TOUR " + (turn + 1) + " |||||\r\n\r\n");
+            logger.info("Quelle est votre proposition ?");
             int[] tentativeUser = challengerRecherche.inputTentativeUser();
 
 
@@ -116,7 +120,7 @@ public class Recherche extends Game {
             if (pcResponse.matches("\\={" + Integer.valueOf(size).toString() + "}")) {
 
                 responseFound = true;
-                System.out.println("\r\n\r\nBravo ! Vous avez trouvé ma combinaison !");
+                logger.info("\r\n\r\nBravo ! Vous avez trouvé ma combinaison !");
                 break;
 
             }
@@ -127,7 +131,7 @@ public class Recherche extends Game {
             if (!responseFound) {
 
                 turn++;
-                System.out.println("Voici ma réponse : " + pcResponse);
+                logger.info("Voici ma réponse : " + pcResponse);
 
                 pcResponse = "";
 
@@ -135,8 +139,8 @@ public class Recherche extends Game {
 
             if (turn == turnMax) {
 
-                System.out.println("\r\n\r\nDommage ! Vous n'avez pas trouvé la solution dans le nombre de tours imparti !");
-                System.out.println("Mon code était : " + Arrays.toString(codePc));
+                logger.info("\r\n\r\nDommage ! Vous n'avez pas trouvé la solution dans le nombre de tours imparti !");
+                logger.info("Mon code était : " + Arrays.toString(codePc));
 
             }
 
@@ -156,12 +160,12 @@ public class Recherche extends Game {
         int[] prevPropoPc = duelRecherche.codePcInit();
         int[] newPropoPc = duelRecherche.codePcInit();
 
-        System.out.println("\r\n");
-        System.out.println("Ma combinaison secrète à " + size + " chiffres a été générée, à vous de saisir la vôtre !");
+        logger.info("\r\n");
+        logger.info("Ma combinaison secrète à " + size + " chiffres a été générée, à vous de saisir la vôtre !");
 
         if (devmode == 1) {
 
-            System.out.println("\r\nMode développeur : Ma combinaison est " + Arrays.toString(codePc) + "\r\n");
+            logger.info("\r\nMode développeur : Ma combinaison est " + Arrays.toString(codePc) + "\r\n");
 
         }
 
@@ -170,11 +174,11 @@ public class Recherche extends Game {
 
         while (!responseFound) {
 
-            System.out.println("\r\n\r\n||||| TOUR " + (turn + 1) + " |||||\r\n\r\n");
-            System.out.println("Quelle est votre proposition ?");
+            logger.info("\r\n\r\n||||| TOUR " + (turn + 1) + " |||||\r\n\r\n");
+            logger.info("Quelle est votre proposition ?");
 
             if (turn != 0) {
-                System.out.println("Rappel >>> Votre tentative précédente : " + Arrays.toString(tentativeUser) + " || Ma réponse : " + pcResponse);
+                logger.info("Rappel >>> Votre tentative précédente : " + Arrays.toString(tentativeUser) + " || Ma réponse : " + pcResponse);
             }
             pcResponse = "";
             tentativeUser = duelRecherche.inputTentativeUser();
@@ -188,13 +192,13 @@ public class Recherche extends Game {
             if (pcResponse.matches("\\={" + Integer.valueOf(size).toString() + "}")) {
 
                 responseFound = true;
-                System.out.println("\r\n\r\nBravo ! Vous avez trouvé ma combinaison en premier !");
+                logger.info("\r\n\r\nBravo ! Vous avez trouvé ma combinaison en premier !");
                 break;
 
             }
 
-            System.out.println("\r\nVoici ma réponse : " + pcResponse + "\r\n\r\nÀ mon tour de tenter !");
-            System.out.println("\r\nJe pense que la solution est " + Arrays.toString(newPropoPc) + " !");
+            logger.info("\r\nVoici ma réponse : " + pcResponse + "\r\n\r\nÀ mon tour de tenter !");
+            logger.info("\r\nJe pense que la solution est " + Arrays.toString(newPropoPc) + " !");
             String userResponse = duelRecherche.inputUserResponse();
 
             for (int i = 0; i < size; i++) {
@@ -210,7 +214,7 @@ public class Recherche extends Game {
             if (userResponse.matches("\\={" + Integer.valueOf(size).toString() + "}")) {
 
                 responseFound = true;
-                System.out.println("\r\n\r\nJ'ai trouvé votre combinaison en premier ! J'ai gagné !");
+                logger.info("\r\n\r\nJ'ai trouvé votre combinaison en premier ! J'ai gagné !");
                 break;
 
             }
