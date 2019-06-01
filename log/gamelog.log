@@ -15,3 +15,63 @@
 13:03:27.263 [main] INFO  game.Main - 
       1 - DEFENDER || 2 - CHALLENGER || 3 - DUEL      
 13:03:27.263 [main] INFO  game.Main - ------------------------------------------------------
+14:55:02.517 [main] INFO  game.Main - ,---.                             ,---.               
+14:55:02.531 [main] INFO  game.Main - |--- ,---.,---.,---.,---.,---.    |  _.,---.,-.-.,---.
+14:55:02.532 [main] INFO  game.Main - |    `---.|    ,---||   ||---'    |   |,---|| | ||---'
+14:55:02.532 [main] INFO  game.Main - `---'`---'`---'`---^|---'`---'    `---'`---^` ' '`---'
+14:55:02.532 [main] INFO  game.Main -                     |  
+14:55:02.532 [main] INFO  game.Main - ------------------------------------------------------
+14:55:02.532 [main] INFO  game.Main -             ,---.,   .|    |,   .,---.
+14:55:02.533 [main] INFO  game.Main -             |   ||\  ||    ||\  ||--- 
+14:55:02.533 [main] INFO  game.Main -             |   || \ ||    || \ ||    
+14:55:02.533 [main] INFO  game.Main -             `---'`  `'`--- ``  `'`---'
+14:55:02.541 [main] INFO  game.Main - 
+
+------------------------------------------------------
+14:55:02.542 [main] INFO  game.Main -             Choisissez votre mode de jeu !            
+14:55:02.542 [main] INFO  game.Main - 
+      1 - DEFENDER || 2 - CHALLENGER || 3 - DUEL      
+14:55:02.542 [main] INFO  game.Main - ------------------------------------------------------
+14:55:04.923 [main] INFO  game.Main - 
+
+14:55:04.926 [main] INFO  game.Main - Veuillez saisir votre combinaison secrète à 4 chiffres !
+14:55:07.437 [main] INFO  game.Main - 
+
+||||| TOUR 1 |||||
+
+
+14:55:07.437 [main] INFO  game.Main - Je pense que la solution est [5, 5, 5, 5] !
+14:55:07.438 [main] INFO  game.Main - Quelle est votre Réponse ? ( - | + | = )
+14:55:14.440 [main] INFO  game.Main - 
+
+||||| TOUR 2 |||||
+
+
+14:55:14.440 [main] INFO  game.Main - Je pense que la solution est [2, 5, 7, 7] !
+14:55:14.441 [main] INFO  game.Main - Quelle est votre Réponse ? ( - | + | = )
+14:55:23.111 [main] INFO  game.Main - 
+
+||||| TOUR 3 |||||
+
+
+14:55:23.111 [main] INFO  game.Main - Je pense que la solution est [1, 5, 6, 6] !
+14:55:23.111 [main] INFO  game.Main - Quelle est votre Réponse ? ( - | + | = )
+14:55:27.367 [main] INFO  game.Main - 
+
+||||| TOUR 4 |||||
+
+
+14:55:27.367 [main] INFO  game.Main - Je pense que la solution est [1, 5, 6, 6] !
+14:55:27.367 [main] INFO  game.Main - Quelle est votre Réponse ? ( - | + | = )
+14:55:36.801 [main] INFO  game.Main - 
+
+J'ai la solution ! C'est bien votre combinaison !
+14:55:36.801 [main] INFO  game.Main - 
+
+------------------------------------------------------
+14:55:36.802 [main] INFO  game.Main -                      Voulez-vous :                    
+14:55:36.802 [main] INFO  game.Main - 
+               1 - REJOUER AU MÊME MODE               
+14:55:36.802 [main] INFO  game.Main -            2 - REJOUER MAIS À UN AUTRE MODE           
+14:55:36.802 [main] INFO  game.Main -                       3 - QUITTER                     
+14:55:36.802 [main] INFO  game.Main - ------------------------------------------------------

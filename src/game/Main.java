@@ -99,25 +99,6 @@ public class Main {
 
     }
 
-/*
-    public void printMenuGame() {
-
-        logger.info("            _______________________________________________");
-        logger.info("           /\\                                              \\");
-        logger.info("           \\ \\       À quel jeu souhaitez vous jouer ?      \\");
-        logger.info("            \\ \\     1 - RECHERCHE +/- || 2 - MASTERMIND      \\");
-        logger.info("             \\ \\______________________________________________\\");
-        logger.info("              \\////////////////////////////////////////////////");
-
-    }
-
-   private game.Game selectGameType() {
-
-        return new game.Recherche();
-
-    }
-*/
-
     private Game selectGameMode() {
 
         sc = new Scanner(System.in);

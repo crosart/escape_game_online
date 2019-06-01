@@ -14,21 +14,11 @@ public abstract class Combinaison {
     private GetProperties properties = new GetProperties();
 
     private int size = Integer.parseInt(properties.getSize());
-    private int[] combiGen = new int[size];
-    int[] userCombi = new int[size];
     Scanner sc;
-    public CombinaisonRecherche propoPc;
 
 
     int getSize() {
         return size;
     }
 
-    public int[] getCombiGen() {
-        return combiGen;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
 }
