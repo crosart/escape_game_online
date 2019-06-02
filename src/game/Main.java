@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 public class Main {
 
+    /*
+    gameMode - Determines the game mode chosen by the user
+     */
+
     private static Logger logger = Logger.getLogger(Main.class.getName());
 
     private int gameMode = 0;
@@ -74,6 +78,9 @@ public class Main {
 
     }
 
+    /*
+    Displays the game title
+     */
 
     private static void printIntro() {
 
@@ -90,6 +97,10 @@ public class Main {
 
     }
 
+    /*
+    Displays the game menu
+     */
+
     private void printMenuMode() {
 
         logger.info("\r\n\r\n------------------------------------------------------");
@@ -98,6 +109,10 @@ public class Main {
         logger.info("------------------------------------------------------");
 
     }
+
+    /*
+    Registers the game mode choice of the user and launches it accordingly
+     */
 
     private Game selectGameMode() {
 

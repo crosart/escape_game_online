@@ -5,9 +5,20 @@ import org.apache.log4j.Logger;
 
 public class CombinaisonRecherche extends Combinaison {
 
+    /*
+    size - The number of characters in the code
+    newPropoPc - The new proposition from the program
+     */
+
     private static Logger logger = Logger.getLogger(Main.class.getName());
     private int size = getSize();
     private int newPropoPc = 0;
+
+    /*
+    Generates the program's initial code
+
+    propoPcInit - The initial generated code
+     */
 
     int[] codePcInit() {
 
@@ -23,6 +34,12 @@ public class CombinaisonRecherche extends Combinaison {
 
     }
 
+    /*
+    Generates a random code
+
+    codePcGen - The generated code
+     */
+
     @Override
     public int[] codePcGenerator() {
 
@@ -37,6 +54,13 @@ public class CombinaisonRecherche extends Combinaison {
         return codePcGen;
 
     }
+
+    /*
+    Registers the initial user's code
+
+    combiInput - The user's input code
+    userCombi - The user's code converted to an Array of int
+     */
 
     @Override
     public int[] inputUserCode() {
@@ -80,6 +104,15 @@ public class CombinaisonRecherche extends Combinaison {
 
     }
 
+    /*
+    Registers the user's response
+
+    equal - Used to verify if the user's input is valid
+    minus - Used to verify if the user's input is valid
+    plus - Used to verify if the user's input is valid
+    inputUser - The user's input response
+     */
+
     @Override
     public String inputUserResponse() {
 
@@ -113,12 +146,20 @@ public class CombinaisonRecherche extends Combinaison {
 
     }
 
+    /*
+    Registers the user's proposition
+
+    stringCodeUser - The user's input proposition
+    codeUser - The user's proposition converted to an Array of int
+     */
+
     @Override
     public int[] inputTentativeUser() {
 
         sc = new Scanner(System.in);
-        int[] codeUser = new int[size];
         String stringCodeUser;
+        int[] codeUser = new int[size];
+
 
         try {
 
@@ -153,6 +194,12 @@ public class CombinaisonRecherche extends Combinaison {
 
     }
 
+    /*
+    Compares the user's proposition to the program's generated code and generates a response
+
+    pcResponse - The program's response
+     */
+
     @Override
     public String tentativeUser(int compareCodeUser, int compareCodePc) {
 
@@ -179,6 +226,13 @@ public class CombinaisonRecherche extends Combinaison {
         return pcResponse;
 
     }
+
+    /*
+    Generates a new proposition for the program
+
+    prevPropoPc - The previous proposition from the program
+    newPropoPc - The new proposition from the program
+     */
 
     @Override
     public int tentativePc(char compareUserResponse, int prevPropoPc) {
